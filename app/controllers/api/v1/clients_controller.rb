@@ -1,7 +1,7 @@
 module Api
   module V1
     class ClientsController < BaseController
-      before_action :set_client, only: [:show, :update, :destroy]
+      before_action :set_client, only: [ :show, :update, :destroy ]
 
       def index
         @clients = client_service.list_all

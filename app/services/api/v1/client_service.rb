@@ -10,7 +10,7 @@ module Api
       end
 
       def search(name)
-        Client.where('name ILIKE ?', "%#{name}%")
+        Client.where("name ILIKE ?", "%#{name}%")
       end
 
       def create(params)

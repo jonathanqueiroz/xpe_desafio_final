@@ -1,7 +1,7 @@
 module Api
   module V1
     class OrdersController < BaseController
-      before_action :set_order, only: [:show, :update, :destroy]
+      before_action :set_order, only: [ :show, :update, :destroy ]
 
       def index
         @orders = order_service.list_all
@@ -45,7 +45,7 @@ module Api
         params.require(:order).permit(
           :client_id,
           :status,
-          order_items_attributes: [:product_id, :quantity, :unit_price]
+          order_items_attributes: [ :product_id, :quantity, :unit_price ]
         )
       end
     end

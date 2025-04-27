@@ -10,7 +10,7 @@ module Api
       end
 
       def search(name)
-        Product.where('name ILIKE ?', "%#{name}%")
+        Product.where("name ILIKE ?", "%#{name}%")
       end
 
       def create(params)

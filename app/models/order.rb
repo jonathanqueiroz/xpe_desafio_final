@@ -5,13 +5,13 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :order_items, allow_destroy: true
 
-  enum :status, { pending: 'pending', completed: 'completed', canceled: 'canceled' }
+  enum :status, { pending: "pending", completed: "completed", canceled: "canceled" }
 
   validates :status, presence: true, inclusion: { in: statuses.keys }
   validates :client_id, presence: true
 
   before_create :set_default_status
-  after_commit :calculate_total_amount, on: [:create, :update]
+  after_commit :calculate_total_amount, on: [ :create, :update ]
 
   private
 

@@ -25,10 +25,10 @@ module XpeDesafioFinal
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Ensure services directory is autoloaded
-    config.autoload_paths << Rails.root.join('app', 'services')
-    config.eager_load_paths << Rails.root.join('app', 'services')
-    config.autoload_paths << Rails.root.join('app', 'dtos')
-    config.eager_load_paths << Rails.root.join('app', 'dtos')
+    config.autoload_paths << Rails.root.join("app", "services")
+    config.eager_load_paths << Rails.root.join("app", "services")
+    config.autoload_paths << Rails.root.join("app", "dtos")
+    config.eager_load_paths << Rails.root.join("app", "dtos")
 
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
