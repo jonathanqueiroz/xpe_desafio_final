@@ -22,6 +22,6 @@ class Order < ApplicationRecord
   end
 
   def set_default_status
-    self.status ||= :pending
+    self.status = :pending if status.blank?
   end
 end
