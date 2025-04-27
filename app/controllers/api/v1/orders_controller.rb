@@ -4,7 +4,7 @@ module Api
       before_action :set_order, only: [ :show, :update, :destroy ]
 
       def index
-        @orders = order_service.list_all
+        @orders = order_service.find_all
         render json: OrderDto.collection(@orders)
       end
 
@@ -38,7 +38,7 @@ module Api
       end
 
       def set_order
-        @order = order_service.find(params[:id])
+        @order = order_service.find_by_id(params[:id])
       end
 
       def order_params

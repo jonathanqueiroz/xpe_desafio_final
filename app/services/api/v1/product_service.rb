@@ -1,15 +1,15 @@
 module Api
   module V1
     class ProductService
-      def list_all
+      def find_all
         Product.all
       end
 
-      def find(id)
+      def find_by_id(id)
         Product.find(id)
       end
 
-      def search(name)
+      def search_by_name(name)
         Product.where("name ILIKE ?", "%#{name}%")
       end
 

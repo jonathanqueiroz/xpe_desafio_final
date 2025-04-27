@@ -1,11 +1,11 @@
 module Api
   module V1
     class OrderService
-      def list_all
+      def find_all
         Order.all
       end
 
-      def find(id)
+      def find_by_id(id)
         Order.find(id)
       end
 

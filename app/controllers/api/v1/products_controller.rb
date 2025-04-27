@@ -4,7 +4,7 @@ module Api
       before_action :set_product, only: [ :show, :update, :destroy ]
 
       def index
-        @products = product_service.list_all
+        @products = product_service.find_all
         render json: ProductDto.collection(@products)
       end
 
@@ -13,7 +13,7 @@ module Api
       end
 
       def search
-        @products = product_service.search(params[:name])
+        @products = product_service.search_by_name(params[:name])
         render json: ProductDto.collection(@products)
       end
 
@@ -43,7 +43,7 @@ module Api
       end
 
       def set_product
-        @product = product_service.find(params[:id])
+        @product = product_service.find_by_id(params[:id])
       end
 
       def product_params

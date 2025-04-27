@@ -4,7 +4,7 @@ module Api
       before_action :set_client, only: [ :show, :update, :destroy ]
 
       def index
-        @clients = client_service.list_all
+        @clients = client_service.find_all
         render json: ClientDto.collection(@clients)
       end
 
@@ -13,7 +13,7 @@ module Api
       end
 
       def search
-        @clients = client_service.search(params[:name])
+        @clients = client_service.search_by_name(params[:name])
         render json: ClientDto.collection(@clients)
       end
 
@@ -43,7 +43,7 @@ module Api
       end
 
       def set_client
-        @client = client_service.find(params[:id])
+        @client = client_service.find_by_id(params[:id])
       end
 
       def client_params

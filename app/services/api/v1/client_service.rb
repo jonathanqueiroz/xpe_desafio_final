@@ -1,15 +1,15 @@
 module Api
   module V1
     class ClientService
-      def list_all
+      def find_all
         Client.all
       end
 
-      def find(id)
+      def find_by_id(id)
         Client.find(id)
       end
 
-      def search(name)
+      def search_by_name(name)
         Client.where("name ILIKE ?", "%#{name}%")
       end
 
