@@ -28,7 +28,7 @@ Este projeto é uma API REST que fornece endpoints para gerenciamento completo d
 ### 1. Clone o Repositório
 
 ```bash
-git clone [URL_DO_REPOSITÓRIO]
+git clone https://github.com/jonathanqueiroz/xpe_desafio_final
 cd xpe_desafio_final
 ```
 
